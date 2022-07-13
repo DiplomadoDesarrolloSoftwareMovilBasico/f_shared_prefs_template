@@ -4,6 +4,8 @@ import 'home_page.dart';
 import 'profile_page.dart';
 
 class Content extends StatefulWidget {
+  const Content({Key? key}) : super(key: key);
+
   @override
   _ContentState createState() => _ContentState();
 }

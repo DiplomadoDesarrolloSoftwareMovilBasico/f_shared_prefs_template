@@ -8,5 +8,5 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.lazyPut<Authentication>(() => Authentication());
   Get.put(AuthenticationController());
-  runApp(MyApp());
+  runApp(const MyApp());
 }

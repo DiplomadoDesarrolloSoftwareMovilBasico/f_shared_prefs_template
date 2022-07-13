@@ -18,7 +18,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     AuthenticationController controller = Get.find();
     return Scaffold(
-      key: Key('signUpScaffold'),
+      key: const Key('signUpScaffold'),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -53,7 +53,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     TextFormField(
                       key: const Key('signUpPassord'),
-                      controller: this._passwordController,
+                      controller: _passwordController,
                       decoration: const InputDecoration(labelText: "Password"),
                       keyboardType: TextInputType.number,
                       obscureText: true,
@@ -92,11 +92,10 @@ class _SignUpPageState extends State<SignUpPage> {
                               }
                             });
                           } else {
-                            final snackBar = SnackBar(
-                              content: Text('Validation nok'),
-                            );
                             ScaffoldMessenger.of(context)
-                                .showSnackBar(snackBar);
+                                .showSnackBar(const SnackBar(
+                              content: Text('Validation nok'),
+                            ));
                           }
                         },
                         child: const Text("Submit")),

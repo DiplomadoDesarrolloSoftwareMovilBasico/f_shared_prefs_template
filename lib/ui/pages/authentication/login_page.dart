@@ -90,11 +90,10 @@ class _LoginPageState extends State<LoginPage> {
                                       content: Text('User problem')));
                             }
                           } else {
-                            final snackBar = const SnackBar(
-                              content: Text('Validation nok'),
-                            );
                             ScaffoldMessenger.of(context)
-                                .showSnackBar(snackBar);
+                                .showSnackBar(const SnackBar(
+                              content: Text('Validation nok'),
+                            ));
                           }
                         },
                         child: const Text("Submit")),
