@@ -10,7 +10,7 @@ Future<Widget> createHomeScreen() async {
   WidgetsFlutterBinding.ensureInitialized();
   Get.lazyPut<Authentication>(() => Authentication());
   Get.lazyPut<AuthenticationController>(() => AuthenticationController());
-  return MyApp();
+  return const MyApp();
 }
 
 void main() {

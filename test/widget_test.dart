@@ -5,6 +5,7 @@ import 'package:f_shared_prefs_template/ui/pages/authentication/signup_page.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
+import 'package:loggy/loggy.dart';
 import 'package:mockito/mockito.dart';
 
 class MockAuthenticationController extends GetxService
@@ -30,7 +31,7 @@ class MockAuthenticationController extends GetxService
 class MockAuthentication extends Mock implements Authentication {
   @override
   Future<bool> get init async {
-    print('MockAuthentication init');
+    logInfo('MockAuthentication init');
     return Future.value(true);
   }
 }
@@ -47,21 +48,21 @@ void main() {
 
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: LoginPage(),
       ),
     );
     await tester.pump();
 
-    expect(find.byKey(Key('loginScaffold')), findsOneWidget);
+    expect(find.byKey(const Key('loginScaffold')), findsOneWidget);
 
-    expect(find.byKey(Key('loginEmail')), findsNWidgets(1));
+    expect(find.byKey(const Key('loginEmail')), findsNWidgets(1));
 
-    await tester.enterText(find.byKey(Key('loginEmail')), 'a@a.com');
+    await tester.enterText(find.byKey(const Key('loginEmail')), 'a@a.com');
 
-    await tester.enterText(find.byKey(Key('loginPassord')), '123456');
+    await tester.enterText(find.byKey(const Key('loginPassord')), '123456');
 
-    await tester.tap(find.byKey(Key('loginSubmit')));
+    await tester.tap(find.byKey(const Key('loginSubmit')));
 
     await tester.pump();
 
@@ -73,21 +74,21 @@ void main() {
 
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: LoginPage(),
       ),
     );
     await tester.pump();
 
-    expect(find.byKey(Key('loginScaffold')), findsOneWidget);
+    expect(find.byKey(const Key('loginScaffold')), findsOneWidget);
 
-    expect(find.byKey(Key('loginEmail')), findsNWidgets(1));
+    expect(find.byKey(const Key('loginEmail')), findsNWidgets(1));
 
-    await tester.enterText(find.byKey(Key('loginEmail')), 'b@a.com');
+    await tester.enterText(find.byKey(const Key('loginEmail')), 'b@a.com');
 
-    await tester.enterText(find.byKey(Key('loginPassord')), '123456');
+    await tester.enterText(find.byKey(const Key('loginPassord')), '123456');
 
-    await tester.tap(find.byKey(Key('loginSubmit')));
+    await tester.tap(find.byKey(const Key('loginSubmit')));
 
     await tester.pump();
 
@@ -99,19 +100,19 @@ void main() {
 
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-      GetMaterialApp(
+      const GetMaterialApp(
         home: SignUpPage(),
       ),
     );
     await tester.pump();
 
-    expect(find.byKey(Key('signUpScaffold')), findsOneWidget);
+    expect(find.byKey(const Key('signUpScaffold')), findsOneWidget);
 
-    await tester.enterText(find.byKey(Key('signUpEmail')), 'a@a.com');
+    await tester.enterText(find.byKey(const Key('signUpEmail')), 'a@a.com');
 
-    await tester.enterText(find.byKey(Key('signUpPassord')), '123456');
+    await tester.enterText(find.byKey(const Key('signUpPassord')), '123456');
 
-    await tester.tap(find.byKey(Key('signUpSubmit')));
+    await tester.tap(find.byKey(const Key('signUpSubmit')));
 
     await tester.pump();
 
@@ -123,19 +124,19 @@ void main() {
 
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-      GetMaterialApp(
+      const GetMaterialApp(
         home: SignUpPage(),
       ),
     );
     await tester.pump();
 
-    expect(find.byKey(Key('signUpScaffold')), findsOneWidget);
+    expect(find.byKey(const Key('signUpScaffold')), findsOneWidget);
 
-    await tester.enterText(find.byKey(Key('signUpEmail')), 'b@a.com');
+    await tester.enterText(find.byKey(const Key('signUpEmail')), 'b@a.com');
 
-    await tester.enterText(find.byKey(Key('signUpPassord')), '123456');
+    await tester.enterText(find.byKey(const Key('signUpPassord')), '123456');
 
-    await tester.tap(find.byKey(Key('signUpSubmit')));
+    await tester.tap(find.byKey(const Key('signUpSubmit')));
 
     await tester.pump();
 
@@ -148,19 +149,19 @@ void main() {
 
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-      GetMaterialApp(
+      const GetMaterialApp(
         home: SignUpPage(),
       ),
     );
     await tester.pump();
 
-    expect(find.byKey(Key('signUpScaffold')), findsOneWidget);
+    expect(find.byKey(const Key('signUpScaffold')), findsOneWidget);
 
-    await tester.enterText(find.byKey(Key('signUpEmail')), 'a');
+    await tester.enterText(find.byKey(const Key('signUpEmail')), 'a');
 
-    await tester.enterText(find.byKey(Key('signUpPassord')), '123456');
+    await tester.enterText(find.byKey(const Key('signUpPassord')), '123456');
 
-    await tester.tap(find.byKey(Key('signUpSubmit')));
+    await tester.tap(find.byKey(const Key('signUpSubmit')));
 
     await tester.pump();
 
